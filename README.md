@@ -20,9 +20,8 @@ four parts
 ### KhufuPAN
 - **KhufuEnv:** https://github.com/w-korani/KhufuEnv
 - **VG:** https://github.com/vgteam/vg
-- **KhufuEnv:** https://github.com/w-korani/KhufuEnv
-  
-- gawk ([see the official GNU Awk website](https://www.gnu.org/software/gawk/manual/gawk.html#Installation))
+- **KMC:** https://github.com/refresh-bio/KMC
+
 
 ## Installation
 

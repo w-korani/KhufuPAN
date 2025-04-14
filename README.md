@@ -56,4 +56,4 @@ hapmapAlleleTypeFreq TestSet1.Smiss0.9.miss0.75.MAF0.05.DiAllelic.DiAllelic.Homo
 ```
 
 ## Citation
-Wright, Hallie C, Catherine E. M. Davis, Josh Clevenger, and Walid Korani. “KhufuEnv, an Auxiliary Toolkit for Building Computational Pipelines for Plant and Animal Breeding.” bioRxiv, January 1, 2025, 2025.03.28.645917. https://doi.org/10.1101/2025.03.28.645917.
+[Wright, Hallie C, Catherine E. M. Davis, Josh Clevenger, and Walid Korani. “KhufuEnv, an Auxiliary Toolkit for Building Computational Pipelines for Plant and Animal Breeding.” bioRxiv, January 1, 2025, 2025.03.28.645917. https://doi.org/10.1101/2025.03.28.645917.](https://www.biorxiv.org/content/10.1101/2025.01.09.632261v1.abstract)

@@ -3,7 +3,7 @@
   <img width="500" alt="Image" src="https://github.com/user-attachments/assets/52299e9b-44ab-485b-9e9d-4735f32af7bf" />
 </div>
 
-four parts
+KhufuPAN is an open-source pipeline for highly efficient genotyping using pangenomes.
 
 <!-- You may use this if you like? :)
 ## Table of Contents

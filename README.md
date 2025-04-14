@@ -5,17 +5,6 @@
 
 KhufuPAN is an open-source pipeline for highly efficient genotyping using pangenomes.
 
-<!-- You may use this if you like? :)
-## Table of Contents
-1. [Requirements](#requirements)
-2. [Installation](#installation)
-3. [Uninstallation](#uninstallation)
-4. [Getting Help](#getting-help)
-5. [Testing Data](#testing-data)
-6. [Citation](#citation)
-7. [Available Tools](#available-tools)
--->
-
 ## Requirements
 ### KhufuPAN
 - **KhufuEnv:** https://github.com/w-korani/KhufuEnv
@@ -45,7 +34,7 @@ KhufuPAN is an open-source pipeline for highly efficient genotyping using pangen
 ## Example code
 ```
 bootstrap.sh -gfa TestProc.gfa  -t 4
-
+```
 LibraryProc.sh -gfa TestProc.gfa -r1 fastqs/sample1.fq.gz -id S01 -t 4
 LibraryProc.sh -gfa TestProc.gfa -r1 fastqs/sample2.fq.gz -id S02 -t 4
 LibraryProc.sh -gfa TestProc.gfa -r1 fastqs/sample3.fq.gz -id S03 -t 4
@@ -62,68 +51,6 @@ panmapGetSV TestSet1.Smiss0.9.miss0.75.MAF0.05.DiAllelic.DiAllelic.HomoPolymorph
 panmapAlleleFreqStats TestSet1.Smiss0.9.miss0.75.MAF0.05.DiAllelic.DiAllelic.HomoPolymorphic.SV.panmap > stat1
 hapmapAlleleTypeFreq TestSet1.Smiss0.9.miss0.75.MAF0.05.DiAllelic.DiAllelic.HomoPolymorphic.SV.panmap > stat2
 ```
-
-## Testing Data
-In order to help users test the functionality of these tools, a directory containing test input files for each section is provided. Each tool is associated with its own documentation, which includes a specific example of how to use it. 
-
-### How to Test a Tool
-- Navigate to the main test directory.
-```
-cd KhufuEnv_main/TestingData
-```
-- Each section has their own set of test inputs. You will need to navigate to the appropriate subdirectory for the section's tools you want to test, replacing `<section-inputs>` with the name of the section's corresponding directory.
-```
-cd <section-inputs> 
-```
-- Display the documentation for the tool using `KhufuEnvHelp <tool-name>`.
-
-- In the tool's documentation, you will find an example command as shown below:
-```
-#####################
-KhufuEnv.Ver1.0.0: hapmapFilterMissingVariant
-Usage: hapmapFilterMissingVariant hapmap missing
-
-Description:
- The hapmapFilterMissingVariant function filters the input hapmap to remove sites where the percentage of variants missing is greater than the specified threshold. 
-
-Parameters:
- hapmap ex: test1.hapmap Hapmap to be processed. 
- missing ex: 0.75 Missing percentage to be used. Must be in decimal format.
-
-Example:
- hapmapFilterMissingVariant test1.hapmap 0.75
-#####################
- ``` 
-- For instance, to test the output of the `hapmapFilterMissingVariant` tool, type or copy and paste `hapmapFilterMissingVariant test1.hapmap 0.75` into the terminal and execute it. 
-
-- The output will be displayed as shown below:
-```
-$ hapmapFilterMissingVariant test1.hapmap 0.75 | column -t
-chr         pos        SM001  SM002  SM003  SM004  SM005  SM006  SM007  SM008  SM009  SM010
-TRv2Chr.01  296910     C      -      -      A,C    A,C    -      -      -      A,C    A,C
-TRv2Chr.01  9470991    C      -      -      C      -      -      C      -      -      -
-TRv2Chr.01  13207367   -      -      T      C      C      -      C      C,T    C      -
-TRv2Chr.01  30479088   -      -      C      C      -      -      C      -      C      -
-TRv2Chr.01  66933056   G      -      G      A,G    G      -      A,G    A,G    A,G    A,G
-TRv2Chr.01  66944054   T      T      -      T      T      T      -      T      T      T
-TRv2Chr.01  73021455   C      -      -      -      -      -      -      C      C      -
-TRv2Chr.01  95590686   A,G    G      -      A,G    G      -      -      -      -      G
-TRv2Chr.01  95593242   -      -      G      C      -      C      -      -      -      -
-TRv2Chr.01  95608110   -      -      -      A      -      A,G    -      -      A      -
-TRv2Chr.01  112412989  A,G    A,G    A      A,G    A      -      A,G    A,G    A,G    -
-TRv2Chr.02  71100      C,T    C,T    C,T    C,T    -      -      C      C,T    C,T    -
-TRv2Chr.02  74281      A      A      A      A      -      A      A      A      A      -
-TRv2Chr.02  80175      C,T    C,T    C,T    C,T    C,T    C      C,T    C,T    C,T    -
-TRv2Chr.02  107994     -      G      A      A      -      -      A,G    A,G    G      -
-TRv2Chr.02  119526     -      G      G      G,T    -      -      G,T    G      G,T    -
-TRv2Chr.02  27794987   -      -      -      G      -      -      -      G      A,G    -
-TRv2Chr.02  67801286   C,T    C      T      C,T    C,T    -      -      -      C,T    C,T
-TRv2Chr.02  84715892   -      A      -      A      -      -      -      A      -      -
-TRv2Chr.03  31478009   T      T      -      C,T    T      T      C,T    T      C,T    -
-TRv2Chr.03  106731401  -      A      -      A      -      -      -      -      A      -
-```
-**Note:** the command `column -t` has been piped for better display. It is not required.
-
 
 ## Citation
 Wright, Hallie C, Catherine E. M. Davis, Josh Clevenger, and Walid Korani. “KhufuEnv, an Auxiliary Toolkit for Building Computational Pipelines for Plant and Animal Breeding.” bioRxiv, January 1, 2025, 2025.03.28.645917. https://doi.org/10.1101/2025.03.28.645917.

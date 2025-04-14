@@ -23,7 +23,7 @@ four parts
 - **KMC:** https://github.com/refresh-bio/KMC
 
 
-## Installation
+## Implementation
 
 1. Download the package.
    ```
@@ -44,29 +44,6 @@ four parts
 5. Refresh the Bash Shell Environment.
    ```
    . ~/.bashrc
-   ```
-
-
-## Uninstallation
-1. Go to the package folder.
-   ```
-   cd KhufuEnv_main
-   ```
-2. Run the uninstaller.
-   ```
-   sudo bash ./uninstaller.sh
-   ```
-3. Remove the source for the Bash Shell Environment.
-   ```
-   sed -i "/^source \/etc\/KhufuEnv\/call.sh$/d"  ~/.bashrc
-   ```
-4. Refresh the Bash Shell Environment.
-   ```
-   . ~/.bashrc  
-   ```
-   or
-   ```
-   exec bash
    ```
 
 

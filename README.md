@@ -1,6 +1,5 @@
-![Image](https://github.com/user-attachments/assets/e16c3dcb-fd54-4390-a007-026dc2f99c9a)
-
-# KhufuPAN is an open-source, 
+# KhufuPAN 
+![Image](https://github.com/user-attachments/assets/0f3a2d94-ab52-4b95-9431-ed5ad1ec7723)
 
 four parts
 

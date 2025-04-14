@@ -23,34 +23,45 @@ KhufuPAN is an open-source pipeline for highly efficient genotyping using pangen
 - **KMC:** https://github.com/refresh-bio/KMC
 
 
-## Implementation
+## Implementation & Getting Help
 
-1. Download the package.
+1. Bootstrap of the pangenome graph
    ```
-   git clone https://github.com/w-korani/KhufuEnv
+   bootstrap.sh -h
    ```
-2. Go to the package folder.
+2. Processing of fastq libraries
    ```
-   cd KhufuEnv_main
+   LibraryProc.sh -h
    ```
-3. Run the installer.
+3. Combining a subset and filtering for sequencing depth
    ```
-   sudo bash ./installer.sh
+   CombineDS.sh -h
    ```
-4. Add the source for the Bash Shell Environment.
+4. Combining subsets and filtering for the pouplation structure
    ```
-   echo "source /etc/KhufuEnv/call.sh"  >>  ~/.bashrc
-   ```
-5. Refresh the Bash Shell Environment.
-   ```
-   . ~/.bashrc
+   KhufuEnvHelp
    ```
 
-
-## Getting Help
+## Example code
 - To list all tools:
 ```
-   KhufuEnvHelp
+bootstrap.sh -gfa /media/walkorany/Maestro2/KhufuPANtest/refPROC/TestProc.gfa  -t 4
+
+/media/walkorany/Maestro2/aps/KhufuPANrelease/LibraryProc.sh -gfa /media/walkorany/Maestro2/KhufuPANtest/refPROC/TestProc.gfa -r1 /media/walkorany/Maestro2/KhufuPANtest/fastqs/sample1.fq.gz -id S01 -t 4
+/media/walkorany/Maestro2/aps/KhufuPANrelease/LibraryProc.sh -gfa /media/walkorany/Maestro2/KhufuPANtest/refPROC/TestProc.gfa -r1 /media/walkorany/Maestro2/KhufuPANtest/fastqs/sample2.fq.gz -id S02 -t 4
+/media/walkorany/Maestro2/aps/KhufuPANrelease/LibraryProc.sh -gfa /media/walkorany/Maestro2/KhufuPANtest/refPROC/TestProc.gfa -r1 /media/walkorany/Maestro2/KhufuPANtest/fastqs/sample3.fq.gz -id S03 -t 4
+
+/media/walkorany/Maestro2/aps/KhufuPANrelease/CombineDS.sh -gam gams -gfa /media/walkorany/Maestro2/KhufuPANtest/refPROC/TestProc.gfa -min 1 -max 10 -o TestSet1.panmap -t 4 -l Set1.list
+
+panmapFilterMissingSample TestSet1.panmap 0.9
+panmapFilterMissingVariant TestSet1.Smiss0.9.panmap 0.75
+panmapFilterMAF TestSet1.Smiss0.9.miss0.75.panmap 0.05
+panmapGetDiAlleles TestSet1.Smiss0.9.miss0.75.MAF0.05.panmap
+panmapGetDiAlleles TestSet1.Smiss0.9.miss0.75.MAF0.05.DiAllelic.panmap
+panmapGetHomoPolymorphic TestSet1.Smiss0.9.miss0.75.MAF0.05.DiAllelic.DiAllelic.panmap
+panmapGetSV TestSet1.Smiss0.9.miss0.75.MAF0.05.DiAllelic.DiAllelic.HomoPolymorphic.panmap
+panmapAlleleFreqStats TestSet1.Smiss0.9.miss0.75.MAF0.05.DiAllelic.DiAllelic.HomoPolymorphic.SV.panmap > stat1
+hapmapAlleleTypeFreq TestSet1.Smiss0.9.miss0.75.MAF0.05.DiAllelic.DiAllelic.HomoPolymorphic.SV.panmap > stat2
 ```
 - To show the documentation of a specific tool:
 ```

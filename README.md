@@ -43,15 +43,14 @@ KhufuPAN is an open-source pipeline for highly efficient genotyping using pangen
    ```
 
 ## Example code
-- To list all tools:
 ```
-bootstrap.sh -gfa /media/walkorany/Maestro2/KhufuPANtest/refPROC/TestProc.gfa  -t 4
+bootstrap.sh -gfa TestProc.gfa  -t 4
 
-/media/walkorany/Maestro2/aps/KhufuPANrelease/LibraryProc.sh -gfa /media/walkorany/Maestro2/KhufuPANtest/refPROC/TestProc.gfa -r1 /media/walkorany/Maestro2/KhufuPANtest/fastqs/sample1.fq.gz -id S01 -t 4
-/media/walkorany/Maestro2/aps/KhufuPANrelease/LibraryProc.sh -gfa /media/walkorany/Maestro2/KhufuPANtest/refPROC/TestProc.gfa -r1 /media/walkorany/Maestro2/KhufuPANtest/fastqs/sample2.fq.gz -id S02 -t 4
-/media/walkorany/Maestro2/aps/KhufuPANrelease/LibraryProc.sh -gfa /media/walkorany/Maestro2/KhufuPANtest/refPROC/TestProc.gfa -r1 /media/walkorany/Maestro2/KhufuPANtest/fastqs/sample3.fq.gz -id S03 -t 4
+LibraryProc.sh -gfa TestProc.gfa -r1 fastqs/sample1.fq.gz -id S01 -t 4
+LibraryProc.sh -gfa TestProc.gfa -r1 fastqs/sample2.fq.gz -id S02 -t 4
+LibraryProc.sh -gfa TestProc.gfa -r1 fastqs/sample3.fq.gz -id S03 -t 4
 
-/media/walkorany/Maestro2/aps/KhufuPANrelease/CombineDS.sh -gam gams -gfa /media/walkorany/Maestro2/KhufuPANtest/refPROC/TestProc.gfa -min 1 -max 10 -o TestSet1.panmap -t 4 -l Set1.list
+CombineDS.sh -gam gams -gfa TestProc.gfa -min 1 -max 10 -o TestSet1.panmap -t 4 -l Set1.list
 
 panmapFilterMissingSample TestSet1.panmap 0.9
 panmapFilterMissingVariant TestSet1.Smiss0.9.panmap 0.75
@@ -63,10 +62,7 @@ panmapGetSV TestSet1.Smiss0.9.miss0.75.MAF0.05.DiAllelic.DiAllelic.HomoPolymorph
 panmapAlleleFreqStats TestSet1.Smiss0.9.miss0.75.MAF0.05.DiAllelic.DiAllelic.HomoPolymorphic.SV.panmap > stat1
 hapmapAlleleTypeFreq TestSet1.Smiss0.9.miss0.75.MAF0.05.DiAllelic.DiAllelic.HomoPolymorphic.SV.panmap > stat2
 ```
-- To show the documentation of a specific tool:
-```
-   KhufuEnvHelp <tool-name>
-```
+
 ## Testing Data
 In order to help users test the functionality of these tools, a directory containing test input files for each section is provided. Each tool is associated with its own documentation, which includes a specific example of how to use it. 
 

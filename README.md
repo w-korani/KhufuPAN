@@ -18,9 +18,10 @@ four parts
 
 ## Requirements
 ### KhufuPAN
-- **KhufuPAN:** https://github.com/w-korani/KhufuEnv
-
-### Command-Line Tools
+- **KhufuEnv:** https://github.com/w-korani/KhufuEnv
+- **KhufuEnv:** https://github.com/w-korani/KhufuEnv
+- **KhufuEnv:** https://github.com/w-korani/KhufuEnv
+  
 - gawk ([see the official GNU Awk website](https://www.gnu.org/software/gawk/manual/gawk.html#Installation))
 
 ## Installation

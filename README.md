@@ -1,8 +1,9 @@
 <div align="center">
   <center><h1>KhufuPAN</h1></center>
+  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/52299e9b-44ab-485b-9e9d-4735f32af7bf" />
 </div>
 
-<img width="500" alt="Image" src="https://github.com/user-attachments/assets/52299e9b-44ab-485b-9e9d-4735f32af7bf" />
+
 
 four parts
 

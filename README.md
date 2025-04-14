@@ -1,4 +1,7 @@
-# KhufuPAN 
+<div align="center">
+  <center><h1>KhufuPAN</h1></center>
+</div>
+
 <img width="775" alt="Image" src="https://github.com/user-attachments/assets/52299e9b-44ab-485b-9e9d-4735f32af7bf" />
 
 four parts

@@ -20,11 +20,6 @@ four parts
 ### R Packages
 - **Basic:** [KhufuPAN (latest version recommended)]([https://www.r-project.org/](https://github.com/w-korani/KhufuEnv))
 
-- **Additional packages:**
-   - data.table
-   - tidyr
-   - plyr
-
 ### Command-Line Tools
 - gawk ([see the official GNU Awk website](https://www.gnu.org/software/gawk/manual/gawk.html#Installation))
 

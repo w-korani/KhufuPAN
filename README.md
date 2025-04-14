@@ -1,5 +1,5 @@
 # KhufuPAN 
-![Image](https://github.com/user-attachments/assets/0f3a2d94-ab52-4b95-9431-ed5ad1ec7723)
+<img width="775" alt="Image" src="https://github.com/user-attachments/assets/52299e9b-44ab-485b-9e9d-4735f32af7bf" />
 
 four parts
 

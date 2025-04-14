@@ -55,6 +55,11 @@ panmapAlleleFreqStats TestSet1.Smiss0.9.miss0.75.MAF0.05.DiAllelic.DiAllelic.Hom
 hapmapAlleleTypeFreq TestSet1.Smiss0.9.miss0.75.MAF0.05.DiAllelic.DiAllelic.HomoPolymorphic.SV.panmap > stat2
 ```
 
+<div align="center">
+  <img width="500" alt="Image" src="https://github.com/user-attachments/assets/5ef2d8ff-e97b-4b97-a6f6-b63ba1a0b656" />
+</div>
+
+
 ## Citation
 Long-Read Low-Pass Sequencing for High-Resolution Trait Mapping
 Kendall Lee, Walid Korani, Philip C. Bentz, Sameer Pokhrel, Peggy Ozias-Akins, Alex Harkess, Justin Vaughn, Josh Clevenger

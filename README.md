@@ -3,8 +3,6 @@
   <img width="500" alt="Image" src="https://github.com/user-attachments/assets/52299e9b-44ab-485b-9e9d-4735f32af7bf" />
 </div>
 
-
-
 four parts
 
 <!-- You may use this if you like? :)
@@ -20,7 +18,7 @@ four parts
 
 ## Requirements
 ### R Packages
-- **Basic:** [R (latest version recommended)](https://www.r-project.org/)
+- **Basic:** [KhufuPAN (latest version recommended)]([https://www.r-project.org/](https://github.com/w-korani/KhufuEnv))
 
 - **Additional packages:**
    - data.table

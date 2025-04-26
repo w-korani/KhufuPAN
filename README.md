@@ -36,12 +36,12 @@ KhufuPAN is an open-source pipeline for highly efficient genotyping using pangen
 bootstrap.sh -gfa TestProc.gfa  -t 4
 ```
 ```
-LibraryProc.sh -gfa TestProc.gfa -r1 fastqs/sample1.fq.gz -id S01 -t 4
-LibraryProc.sh -gfa TestProc.gfa -r1 fastqs/sample2.fq.gz -id S02 -t 4
-LibraryProc.sh -gfa TestProc.gfa -r1 fastqs/sample3.fq.gz -id S03 -t 4
+LibraryProc.sh -gfa refPROC/TestProc.gfa -r1 fastqs/sample1.fq.gz -id S01 -t 4
+LibraryProc.sh -gfa refPROC/TestProc.gfa -r1 fastqs/sample2.fq.gz -id S02 -t 4
+LibraryProc.sh -gfa refPROC/TestProc.gfa -r1 fastqs/sample3.fq.gz -id S03 -t 4
 ```
 ```
-CombineDS.sh -gam gams -gfa TestProc.gfa -min 1 -max 10 -o TestSet1.panmap -t 4 -l Set1.list
+CombineDS.sh -gam gams -gfa refPROC/TestProc.gfa -min 1 -max 10 -o TestSet1.panmap -t 4 -l Set1.list
 ```
 ```
 panmapFilterMissingSample TestSet1.panmap 0.9

@@ -5,7 +5,6 @@
 ##################
 helpFunc()
 {
-   "$khufu_dir"/utilities/logo.sh
    echo -e "
    Usage:   \033[46m$0 -gfa ref/asd.gfa -l sample.lists\033[0m
    \033[46m-t\033[0m       NumOfThread 

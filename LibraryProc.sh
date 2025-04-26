@@ -6,7 +6,6 @@
 ##################
 helpFunc()
 {
-   "$khufu_dir"/utilities/logo.sh
    echo -e "Usage:       \033[46m$0 -gfa ref/asd.gfa -gams gams -id asd\033[0m
    \033[46m-t\033[0m        NumOfThread
    \033[46m-/--id\033[0m    SampleID
@@ -64,8 +63,6 @@ if [[ $id == "" ]]; then echo "sample ID should be provided" ; exit 0; fi
 if [[ $fq1 == "" ]]; then echo "fastq1 should be provided" ; exit 0; fi
 if [[ $fq2 == "" ]]; then echo "single-read end processing" ; fi
 ##################
-khufu_dir="/cluster/projects/khufu/qtl_seq_II/khufu_II"
-source "$khufu_dir"/utilities/load_modules.sh
 #################
 workDir=$(dirname $gfa)
 prefix=$(echo $gfa | sed "s:.*/::g" | sed "s:.gfa.*$::g")
@@ -97,7 +94,7 @@ then
       ## merging/sorting fastq
       cat "$fqR1" "$fqR2" > "$gams"/TMP_"$id"/12.fq.gz
       ## get kff file
-      $KMC -k"$kmer" -okff -m"$mem" -t"$t" -hp "$gams"/TMP_"$id"/12.fq.gz "$gams"/TMP_"$id"/"$id" "$gams"/TMP_"$id"
+      kmc -k"$kmer" -okff -m"$mem" -t"$t" -hp "$gams"/TMP_"$id"/12.fq.gz "$gams"/TMP_"$id"/"$id" "$gams"/TMP_"$id"
       ## subgraphing
       vg haplotypes -v 2 -t "$t" --include-reference --diploid-sampling  -i "$workDir"/"$prefix".hapl -k "$gams"/TMP_"$id"/"$id".kff -g "$gams"/TMP_"$id"/"$id".gbz "$workDir"/"$prefix".gbz
       ## mapping

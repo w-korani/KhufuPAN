@@ -5,7 +5,6 @@
 ##################
 helpFunc()
 {
-   "$khufu_dir"/utilities/logo.sh
    echo -e "Usage:         \033[46m$0 -RefworkDir RefworkDir -PanID PanID -seqfile seqfile -refGen refGen -t 2\033[0m
    \033[46mt\033[0m           NumOfThread
    \033[46m-/--gfa\033[0m     GFA file"

@@ -55,7 +55,7 @@ then
    ls -l "$gams"/*.vcf5 | sed "s:.*/::g" | sed "s:.vcf5::g" > "$tmpDir"/geno.list
    list="$gams"
 else
-   cat $list > "$tmpDir"/geno.list
+   ls -l "$bams"/*.vcf5 | sed "s:.*/::g" | sed "s:.vcf5::g" | grep -wf "$list" > "$tmpDir"/geno.list
 fi
 ###
 if [[ -z "$output" ]]

@@ -15,7 +15,9 @@ helpFunc()
    \033[46m-/--r2\033[0m    FastqPair2 [optional]
    \033[46m-/--mem\033[0m   memory to be used by kmer
    \033[46m-/--kmer\033[0m  kmer length, max 31, default is 25, kmer=0 stops the personalized graph.
-   \033[46m-/--clean\033[0m flag to clean up gams folder after run"
+   \033[46m-/--clean\033[0m flag to clean up gams folder after run
+   \033[46m-/--MinDep\033[0m   MinDep [minimum dep requried to process, default 0.25]
+   "
    exit 1
 }
 ##################
@@ -25,10 +27,11 @@ clean=0
 mem=12
 kmer=25
 clean=1
+MinDep=0.25
 ##################
 ##################
 SOPT='t:q:h'
-LOPT=('gams' 'id' 'gfa' 'r1' 'r2' 'mem' 'kmer' 'clean')
+LOPT=('gams' 'id' 'gfa' 'r1' 'r2' 'mem' 'kmer' 'clean' 'MinDep')
 OPTS=$(getopt -q -a --options ${SOPT} --longoptions "$(printf "%s:," "${LOPT[@]}")" --name "$(basename "$0")" -- "$@")
 eval set -- $OPTS
 while [[ $# > 0 ]]; do
@@ -43,6 +46,7 @@ while [[ $# > 0 ]]; do
       --mem) mem=$2 && shift ;;
       --kmer) kmer=$2 && shift ;;
       --clean) clean=$2 && shift ;;
+      --MinDep) MinDep=$2 && shift ;;
 		esac
     shift
 done
@@ -56,6 +60,7 @@ echo "fq1=$fq1"
 echo "fq2=$fq2"
 echo "mem=$mem"GB
 echo "kmer=$kmer"
+echo "MinDep=$MinDep"
 if [[ $clean == 1 ]]; then echo "gams folder will be cleaned after run" ; elif [[ $clean == 0 ]]; then echo "" ; else echo "clean should be 1 or 0" ; fi
 ##################
 if [[ $gfa == "" ]]; then echo "gfa should be provided" ; exit 0; fi
@@ -75,7 +80,14 @@ dep=1; dep=$(cat "$workDir"/"$prefix".gfa.stats | awk '{if($1=="length") print $
 zcat $fq1 $fq2 | awk '{if(NR%4==2) print $0}' | tr -d '\n' | wc -c | sed "s:$: mapping to $dep:g" > "$gams"/"$id".len
 cat "$gams"/"$id".len | cut -d' ' -f 1 | awk -v dep=$dep '{printf("%.2f\n", $0/(dep*1))}' | sed "s:^:$id\t:g"  > "$gams"/"$id".dep
 sed -i "s:^:$id\t:g" "$gams"/"$id".len
-) &
+)
+###
+SampleDep=$(cat "$bams"/"$id".dep | cut -f 2)
+if [[ $SampleDep < "$MinDep" ]]
+then
+   echo ""$id" will not processed, has lower dep than the MinDep cutoff"
+   exit 0
+fi
 ###
 mkdir "$gams"/TMP_"$id"
 fqR1=$fq1
